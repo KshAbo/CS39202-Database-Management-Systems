@@ -1,0 +1,19 @@
+[project]
+name = "hqt"
+version = "0.1.0"
+description = "Hybrid Trading Database System"
+readme = "README.md"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+markers = [
+    "integration: tests requiring Docker services (LOB, TimescaleDB, Graph, etc.)",
+    "benchmark: performance benchmarks (may be slow)",
+    "unit: pure-Python unit tests with no external dependencies",
+]
